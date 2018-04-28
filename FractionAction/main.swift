@@ -63,26 +63,52 @@ while 1 == 1 {
         continue
         
         }
-    
-    }
 
 //if all tests passed continue (proceed)
     denominator = givenInteger
     break // stop while loop
-    
-
-
-
+}
 
 
 // PROCESS
 // Implement the primary logic of the problem here
-// Get Started
+// Get Started to get quotient and remainder
+
 let remainder = numerator % denominator
 let quotient = numerator / denominator
 
+//Is it a whole number
+if remainder == 0 {
+  
+    
+// We have a whole number
+    print("The result is:")
+    print(quotient)
+} else {
+// WE MUST REDUCE
+// loop backwards from the halfway point of the numerator
+// Loop backwards form halfway point of 8
+// 4,3,2
+    var GCF = -1
+    for i in stride(from: remainder / 2, to: 2, by: -1){
+  // When the counter vairable "i" evenly divides into both
+        // the remaijnder and the original denominator ... we have the GCF
+        
+        if remainder % i == 0 && validDenominator % i == 0 {
+            
+            GCF = i
+            break //stop the loop
+            
+        }
+    }
+    print(GCF)
+    
+    // Print the reduced
+
+}
 
 // OUTPUT
 // Report results to the user here
+
 
 
